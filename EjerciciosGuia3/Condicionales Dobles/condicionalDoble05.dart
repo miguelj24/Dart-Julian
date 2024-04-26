@@ -8,20 +8,46 @@ void main () {
   // como para el caso de pago de crédito. Para el caso de pago de contado el usuario ingresa 1, para pago a crédito el usuario ingresa 2.
 
   // DEFINICION VARIABLES
-  int brochasCerda, rodillos, cantidad;
-  double precioBrocha, precioRodillo, Brocha, Rodillo;
-  double precioTotal;
+  double precioBrochas, precioRodillos, descuentoBrochas, descuentoRodillos;
+  double precio, precioTotalBrochas, precioTotalRodillos, descuento;
+  int cantidadBrochas, cantidadRodillos, descuentoContado;
+
+  //ASIGNACION VALORES
+  precioBrochas = 4000;
+  precioRodillos = 3000;
+
   // ENTRADA ALGORITMO
-  Brocha = 4500;
-  Rodillo = 3000;
-  print("Cual es la cantidad de brochas de cerda");
-  brochasCerda = int.parse(stdin.readLineSync()!);
-  print("Cual es la cantidad de rodillos");
-  rodillos = int.parse(stdin.readLineSync()!);
-  cantidad = brochasCerda + rodillos;
-  print("La cantidad entre brochas y rodillos: $cantidad");
-  precioBrocha = Brocha * brochasCerda;
-  precioRodillo = Rodillo * rodillos;
-  precioTotal = precioBrocha + precioRodillo;
-  print("El total a pagar es: $precioTotal");
+  print("Cuantas brochas desea llevar");
+  cantidadBrochas = int.parse(stdin.readLineSync()!);
+  print("Cuantos rodillos desea llevar");
+  cantidadRodillos = int.parse(stdin.readLineSync()!);
+
+  // PROCESO DE DESCUENTOS
+  precioTotalBrochas = precioBrochas * cantidadBrochas;
+  descuentoBrochas = precioTotalBrochas * 0.20;
+  precioTotalBrochas = precioTotalBrochas - descuentoBrochas;
+
+  precioTotalRodillos = precioRodillos * cantidadRodillos;
+  descuentoRodillos = precioTotalRodillos * 0.15;
+  precioTotalRodillos = precioTotalRodillos - descuentoRodillos;
+
+  precio = precioTotalBrochas + precioTotalRodillos;
+
+  //TIPO DE PAGO
+  print("El total a pagar es: $precio");
+  print("¿Desea pagar al contado o con tarje de credito?");
+  print("1. Contado");
+  print("2. Tarjeta de credito");
+  descuentoContado = int.parse(stdin.readLineSync()!);
+  
+  // SALIDA ALGORITMO
+  if (descuentoContado == 1) {
+    descuento = precio * 0.07;
+    precio = precio - descuento;
+    print("El total a pagar es: $precio");
+  } else {
+    if (descuentoContado == 2) {
+      print("El total a pagar es: $precio");
+    }
+  }
 }
