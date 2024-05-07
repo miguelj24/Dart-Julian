@@ -90,4 +90,5 @@ void main(){
       }
     }
   }
+  print("$resultado");
 }
