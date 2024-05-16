@@ -25,7 +25,7 @@ void main(List<String> args) {
       sueldo += cantidad;
     }
 
-    comision = sueldo * 010;
+    comision = sueldo * 0.10;
     print("El vendedor tiene un total de $comision de comision");
     sueldoTotal = sueldo + comision;
     print("El vendedor esta semana tiene un sueldo de $sueldoTotal");
