@@ -50,7 +50,7 @@ void main(List<String> args) {
   promPesoAdulto = sumaPesoAdulto / contAdulto;
   promPesoAdultoMayor = sumaPesoAdultoMayor / contAdultoMayor;
   print("El promedio de pesos de niños es: $promPesoNino");
-  print("El promedio de pesos de niños es: $promPesoJoven");
-  print("El promedio de pesos de niños es: $promPesoAdulto");
-  print("El promedio de pesos de niños es: $promPesoAdultoMayor");
+  print("El promedio de pesos de jovenes es: $promPesoJoven");
+  print("El promedio de pesos de adultos es: $promPesoAdulto");
+  print("El promedio de pesos de adulto mayor es: $promPesoAdultoMayor");
 }
