@@ -1,38 +1,43 @@
 import 'dart:io';
-void main(List<String> args) {
+
+void main () {
   // MIGUEL PEÑA - EJERCICIO WHILE 06
+  // Calcular el promedio de edades de hombres, mujeres y de todo un grupo de n alumnos
 
-  // DEFINICION VARIABLES
-  double promedio, promedioHombres, promedioMujeres;
-  int cantAlumnos, contadorHombres = 0, contadorMujeres = 0;
-  int contador = 0, edad, sumaHombres = 0, sumaMujeres = 0;
-  int sumaTotal = 0;
-  String genero;
-  
-  // ENTRADA ALGORITMO
-  print("Cual es la cantidad de alumnos");
-  cantAlumnos = int.parse(stdin.readLineSync()!);
+  //DEFINICIÓN
+  double promedioH = 0, promedioM = 0, promedio;
+  int cantidadAlumnos;
+  int cantHombres = 0, cantMujeres = 0;
+  int edadHombres = 0, edadMujeres = 0, contador = 0, edad = 0, edadTotal = 0;
+  String? genero;
 
-  while(contador < cantAlumnos) {
-    print("Cual es su genero y edad");
-    genero = stdin.readLineSync()!;
+  //ENTRADA
+  print("Escriba la cantidad de alumnos a evaluar");
+  cantidadAlumnos = int.parse(stdin.readLineSync()!);
+
+  while (contador < cantidadAlumnos) {
+    print("Escriba H en caso de ser hombre o M en caso de ser mujer");
+    genero = stdin.readLineSync();
+    print("Escriba su edad");
     edad = int.parse(stdin.readLineSync()!);
-    if (genero.toUpperCase() == "H"){
-      sumaHombres += edad;
-      contadorHombres++;
-    } else if (genero.toUpperCase() == "M") {
-      sumaMujeres += edad;
-      contadorMujeres++;
-    } else {
-      print("Genero invalido");
+
+    if (genero!.toUpperCase() == "H") {
+      cantHombres ++;
+      edadHombres += edad;
+      promedioH = edadHombres / cantHombres;
+    }else if (genero.toUpperCase() == "M") {
+      cantMujeres ++;
+      edadMujeres += edad;
+      promedioM = edadMujeres / cantMujeres;
+    }else {
+      print("El genero es incorrecto");
     }
     contador++;
   }
-  sumaTotal = sumaMujeres + sumaHombres;
-  promedio = sumaTotal / cantAlumnos;
-  promedioMujeres = sumaMujeres / contadorMujeres;
-  promedioHombres = sumaHombres / contadorHombres;
-  
-  print("El promedio de mujeres es: $promedioMujeres");
-  print("El promedio de mujeres es: $promedioHombres");
+
+  promedio = edadTotal / cantidadAlumnos;
+
+  print("El promedio de edades en $cantHombres hombres es: $promedioH años");
+  print("El promedio de edades en $cantMujeres mujeres es: $promedioM años");
+  print("El promedio de edades del grupo es: $promedio");
 }

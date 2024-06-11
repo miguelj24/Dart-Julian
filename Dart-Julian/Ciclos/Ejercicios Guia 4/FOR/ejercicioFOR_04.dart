@@ -12,7 +12,7 @@ void main(List<String> args) {
 
   // ENTRADA | SALIDA ALGORITMO
   for (int i = 0; i < cantAlumnos; i++){
-    print("Ingrese la nota del alumno" + (i+1).toString());
+    print("Ingrese la nota del alumno " + (i+1).toString());
     nota = double.parse(stdin.readLineSync()!);
     while(nota < 0 || nota > 5){
       print("La nota está en rango incorrecto");

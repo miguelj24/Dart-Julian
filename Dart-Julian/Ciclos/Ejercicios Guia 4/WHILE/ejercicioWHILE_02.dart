@@ -6,7 +6,7 @@ void main(List<String> args) {
   // Si trabaja más de 40 horas se le paga $20 por cada una de las primeras 40 horas y $25 por cada hora extra.
 
   // DEFINICION VARIABLES
-  int cantObreros, contador = 0, horastrabajadas, pagoHora, horaExtra, sueldo, sueldoTotal;
+  int cantObreros = 0, contador = 0, horastrabajadas, pagoHora, horaExtra, sueldo, sueldoTotal;
 
   // ENTRADA ALGORTIMO
   print("Cual es la cantidad de obreros ");
@@ -32,5 +32,6 @@ void main(List<String> args) {
         print("El pago de las horas trabajadas mas el extra es de: $sueldoTotal");
       }
     }
+    cantObreros++;
   }
 }

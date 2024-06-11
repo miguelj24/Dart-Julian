@@ -1,5 +1,4 @@
 import 'dart:io';
-
 void main(List<String> args) {
   // MIGUEL PEÑA - EJERCICIO FOR 03
   // Leer 20 números e imprimir cuantos son positivos, cuantos negativos y cuantos cero. 
@@ -14,15 +13,14 @@ void main(List<String> args) {
     print("Ingrese un numero");
     numero = double.parse(stdin.readLineSync()!);
     if(numero > 0){
-      print("El numero es positivo");
-      cantPositivos ++ ;
+      cantPositivos = cantPositivos + 1;
     }else if(numero < 0){
-      print("El numero es negativo");
-      cantNegativos ++;
+      cantNegativos = cantNegativos + 1;
     } else {
-      print("El numero es cero");
-      cantCeros ++;
+      cantCeros = cantCeros + 1;
     }
   }
-
+  print("Cantidad de números positivos es: $cantPositivos");
+  print("Cantidad de números negativos es: $cantNegativos");
+  print("Cantidad de números neutros es: $cantCeros");
 }
