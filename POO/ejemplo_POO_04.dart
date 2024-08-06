@@ -1,8 +1,8 @@
-import 'Vehiculo.dart';
+import 'vehiculo.dart';
 import 'dart:io';
 
 void main(List<String> args) {
-  Vehiculo vehi_obj1 = Vehiculo("azul", 40, 2);
+  vehiculo vehi_obj1 = vehiculo("azul", 40, 2);
   vehi_obj1.avanzar(25);
   vehi_obj1.avanzar(25);
   vehi_obj1.avanzar(125);
@@ -16,7 +16,7 @@ void main(List<String> args) {
   }
   print(nombresVehiculos);
 
-  List<Vehiculo> listaVehiculos = [];
+  List<vehiculo> listaVehiculos = [];
   String colorUsuario;
   int velocidadUsuario;
   double tamanioUsuario;
@@ -28,7 +28,7 @@ void main(List<String> args) {
     print("Ingrese el taaño del vehiculo");
     tamanioUsuario = double.parse(stdin.readLineSync()!);
     // Se crea el objeto de forma dinamica con los datos que ingrese el usuario
-    Vehiculo vehiculo_obj1 = Vehiculo(colorUsuario, velocidadUsuario, tamanioUsuario);
+    vehiculo vehiculo_obj1 = vehiculo(colorUsuario, velocidadUsuario, tamanioUsuario);
     print("*"*30);
     print("Vehiculo: ${i + 1}");
     vehi_obj1.avanzar(30);

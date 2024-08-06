@@ -8,7 +8,18 @@ class vehiculo {
   //this.velocidad = vel;
   //this.tamano = tam;}
 
-  vehiculo(this.color, this.velocidad, this.tamano) {}
+  vehiculo(this.color, this.velocidad, this.tamano);
+
+
+  //METODO SET Y GET
+  //SETEA O ASIGNA UN NUEVO VALOR PARA EL ATRIBUTO COLOR 
+  void setcolor(String newcolor){
+    this.color = newcolor;
+  }
+  //PERMITE OBTENER EL VALOR DE UN ATRIBUTO COLOR
+ String getcolor (){
+  return this.color;
+  }
 
   void avanzar(int velAvanzar) {
     int newVelocidad = this.velocidad + velAvanzar;
